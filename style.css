@@ -1,0 +1,64 @@
+:root {
+    /* Global Definitions */
+    background-color: var(--background);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+
+    /* Palette Colors - Dark */
+    --accent:     #17cc30;
+    --primary:    #457bee;
+    --secondary:  #14213d;
+    --foreground: #ffffff;
+    --shade:      #e5e5e5;
+    --background: #000000;
+}
+
+#terminalLine {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    padding: .5em;
+    background-color: var(--secondary);
+    border-radius: .5em;
+}
+
+#devTitleContainer span {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+    margin: 0px;
+}
+
+#devTitle_path {
+    color: var(--accent)
+}
+
+#devTitle_start {
+    color: var(--foreground)
+}
+
+#devTitle {
+    max-width: fit-content;
+    margin: auto;
+    color: var(--primary)
+}
+
+#devTitleCursor {
+    width: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+    background-color: var(--foreground);
+    text-align: center;
+    vertical-align: middle;
+}
+
+#introduction {
+    max-width: fit-content;
+    margin: auto;
+    text-align: center;
+    margin-top: 1rem;
+    
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    color: var(--shade);
+}
