@@ -5,23 +5,35 @@
         <title>Noah Black - Developer</title>
 
         <!-- Script/Styling Connections -->
-        <script src="script.js"></script>
-        <link rel="stylesheet" href="style.css">
+        <script src="/scripts/script.js"></script>
+        <link rel="stylesheet" href="style/style.css">
     </head>
     
     <body>
-        <div id="terminalLine">
-            <div id="devTitleContainer">
-                <span id="devTitle_path">noah@website</span>
-                <span id="devTitle_start">:$&nbsp;</span>
-                <span id="devTitle">Software Engineer</span>
-            </div>
-            <div id="devTitleCursor"></div>
-        </div>
-        <div id="introduction">
-            <p>Hello! I'm Noah - a professional programmer, engineer, and designer. Welcome to my personal webpage.</p>
-            <p>Contact me at:</p>
-            <p>www.linkedin.com/in/noah-black-developer<br>noah.black@gmail.com</p>
-        </div>
+        <!-- Introduction + Title Info -->
+        <article>
+            <header>
+                <div id="terminalLine">
+                    <div id="devTitleContainer">
+                        <div class="terminalText" id="devTitle_path">noah@website</div>
+                        <div class="terminalText" id="devTitle_start">:$&nbsp;</div>
+                        <div class="terminalText" id="devTitle">Software Engineer</div>
+                        <div class="terminalText" id="devTitleCursor"></div>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div class="plainText" id="introduction">
+                    <p>Hello! I'm Noah - a professional programmer, engineer, and designer. Welcome to my personal webpage.</p>
+                </div>
+            </main>
+            <footer>
+                <div class="plainText" id="contact">Contact me at:</div>
+                <div class="plainList" id="contactList">
+                    <div>www.linkedin.com/in/noah-black-developer</div>
+                    <div>noah.black@gmail.com</div>
+                </div>
+            </footer>
+        </article>
     </body>
 </html>
