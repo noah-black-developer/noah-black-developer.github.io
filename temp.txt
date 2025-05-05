@@ -1,0 +1,1 @@
+                <p>Professionally, I'm a fxull-time Software Engineer, with a focus on Systems design and DevOps work. Much of my work revolves around keeping projects stable and healthy - whether that be through rigorous CI/CD designs, test automation, or implementing project standards from scratch.</p>
