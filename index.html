@@ -5,223 +5,40 @@
     </head>
 
     <body>
-        <!-- 
-        NOTE: Page elements below are intialized to *generally* static values.
-        If the viewer chooses to interact with the page in 'terminal' mode,
-        they will be hidden from the user and instead handled by attached scripts.
-        -->
+        <div id="background" class="centered">
+            <div id="background2" class="stack">
 
-        <header>
-            <!-- Section contains the initial messages user will see before interacting with the page. -->
-            <span>
-                <pre>  ________   ________  ________  ___  ___      ________  ___       ________  ________  ___  __       
- |\   ___  \|\   __  \|\   __  \|\  \|\  \    |\   __  \|\  \     |\   __  \|\   ____\|\  \|\  \     
- \ \  \\ \  \ \  \|\  \ \  \|\  \ \  \\\  \   \ \  \|\ /\ \  \    \ \  \|\  \ \  \___|\ \  \/  /|_   
-  \ \  \\ \  \ \  \\\  \ \   __  \ \   __  \   \ \   __  \ \  \    \ \   __  \ \  \    \ \   ___  \  
-   \ \  \\ \  \ \  \\\  \ \  \ \  \ \  \ \  \   \ \  \|\  \ \  \____\ \  \ \  \ \  \____\ \  \\ \  \ 
-    \ \__\\ \__\ \_______\ \__\ \__\ \__\ \__\   \ \_______\ \_______\ \__\ \__\ \_______\ \__\\ \__\
-     \|__| \|__|\|_______|\|__|\|__|\|__|\|__|    \|_______|\|_______|\|__|\|__|\|_______|\|__| \|__|</pre>
-            </span>
-            <span>Software Developer, DevOps Engineer, App Designer</span>
-            <hr>
-            <span>Hello! Welcome to my personal homepage.<br></span>
-            <span>I use this site to host a mix of personal projects and professional experience...with a bit of old-school flair.<br></span>
-            <ul>
-                <li>Use '<b>list</b>' to show what sections can be viewed.</li>
-                <li>To open a section, use '<b>run</b>' followed by the section name (ex. run about).</li>
-                <li>For all available commands, use the '<b>help</b>' command.</li>
-                <li>Use '<b>home</b>' at any time to reset back to the starting screen.</li>
-            </ul>
-            <div id="terminalLine">] <input type="text"></input></div>
-        </header>
+                <!-- SCROLLING BACKGROUND -->
+                <div class="scroll_container">
+                    <!--
+                    To set a new scrolling SVG...
+                    1. Write out the full <svg> tag in the following format:
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path style="STYLING" d="PATH_DEFINITION"></path></svg>
 
-        <br>
+                    2. Encode the text to URL-valid text using https://www.asiteaboutnothing.net/c_decode-url.php
 
-        <body>
-            <!-- In 'terminal' mode, sections below represent various info sections the user can access. -->
-            <section>
-                <!-- About Me -->
-                <span>
-                    <pre>    _    _                 _     __  __      
-   / \  | |__   ___  _   _| |_  |  \/  | ___ 
-  / _ \ | '_ \ / _ \| | | | __| | |\/| |/ _ \
- / ___ \| |_) | (_) | |_| | |_  | |  | |  __/
-/_/   \_\_.__/ \___/ \__,_|\__| |_|  |_|\___|</pre>
-                </span>
+                    3. Insert the encoded text as a style for 'scroll_background' class as follows:
+                      <div ... style="background-image: url('data:image/svg+xml,ENCODED_TEXT)"></div>
+                    -->
 
-                <span>
-                    Profressionally, I am a full-time Software Engineer with a heavy focus on DevOps, automation, and a deep knowledge of software.
-                    I've worn many hats over the years - test engineer, developer, project architect, and more - and I take pride in being adaptive to new problem spaces.
-                </span>
-                <br>
-                <br>
-                <span>
-                    Nothing is more interesting to me than a problem that needs solving; nothing is more satisfying to me than solving it in a way that is designed to last.
-                </span>
-                <br>
-                <br>
-                <span>
-                    Personally, I try to fill my life with as much art and creativity as I can!
-                    I'm an avid fantasy fan; between running D&D games, cosplay, and even amatuer chainmaille work (emphasis on amatuer), I make sure to keep myself busy. If you're ever at the Maryland Ren Faire, keep an eye out for some of my antics! 
-                </span>
-                <br>
-                <br>
-                <span>
-                    I have a life-long love of music, theater, lifting, and puzzles, but I'm always seeking out new hobbies to take on.
-                    If anything I listed resonated with you, I may just be your guy!
-                </span>
-            </section>
+                    <!-- Reference SVG: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path style="fill: #1d1729" d="M100 0 L100 50 L50 100 L50 50 L0 50 L50 0 Z"></path></svg> -->
+                    <div id="scroll" class="scroll_background" style="background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cpath%20style%3D%22fill%3A%20%231d1729%22%20d%3D%22M100%200%20L100%2050%20L50%20100%20L50%2050%20L0%2050%20L50%200%20Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E')"></div>
+                </div>
+                
+                <!-- CONTACT CARD -->
+                <div id="contents" class="centered">
+                    <div id="card" class="centered">
+                        <div id="card_center" class="centered">
+                            <p id="status">Under Construction...</p>
+                        </div>
+                    </div>
+                </div>
 
-            <br>
-
-            <section>
-                <!-- Professional Skills -->
-                <span>
-                    <pre> _____                      _                     
-| ____|_  ___ __   ___ _ __(_) ___ _ __   ___ ___ 
-|  _| \ \/ / '_ \ / _ \ '__| |/ _ \ '_ \ / __/ _ \
-| |___ >  <| |_) |  __/ |  | |  __/ | | | (_|  __/
-|_____/_/\_\ .__/ \___|_|  |_|\___|_| |_|\___\___|
-           |_|                                    </pre>
-                </span>
-                <span>Programming Languages:</span>
-                <ul>
-                    <li>Python</li>
-                    <li>C</li>
-                    <li>C++</li>
-                    <li>C#</li>
-                    <li>Javascript</li>
-                    <li>Groovy</li>
-                    <li>Bash</li>
-                    <li>Batch (cmd.exe)</li>
-                </ul>
-                <span>File Standards:</span>
-                <ul>
-                    <li>YAML</li>
-                    <li>HTML</li>
-                    <li>XML/XSD (1.0 and 1.1)</li>
-                </ul>
-                <span>Technologies:</span>
-                <ul>
-                    <li>GitHub Actions</li>
-                    <li>Jenkins</li>
-                    <li>AWS Lambda</li>
-                    <li>AWS S3</li>
-                    <li>Qt/QML/PySide6</li>
-                    <li>Atlassian Software (Confluence, Jira, Bitbucket)</li>
-                    <li>Git CLI/Scripting</li>
-                </ul>
-            </section>
-
-            <br>
-
-            <section>
-                <!-- PROJECTS -->
-                <!-- Each project is given its own decicated section below. -->
-                <span>
-                    <pre> ____            _           _       
-|  _ \ _ __ ___ (_) ___  ___| |_ ___ 
-| |_) | '__/ _ \| |/ _ \/ __| __/ __|
-|  __/| | | (_) | |  __/ (__| |_\__ \
-|_|   |_|  \___// |\___|\___|\__|___/
-              |__/                   </pre>
-                </span>
-
-                <section>
-                    <!-- TOTK Armor Tracker -->
-                    <span>1. <a href="https://github.com/noah-black-developer/TOTK-Armor-Tracker" target="_blank">TOTK Armor Tracker</a></span>
-                    <br>
-                    <br>
-                    <span>A standalone, cross-platform application for tracking your armor progress in the Legend of Zelda: Tears of the Kingdom.</span>
-                    <ul>
-                        <li>Built using C++, with QtQuick and QML as the layout designer and renderer.</li>
-                        <li>Maintained with Github Actions to handle CI/CD.</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <!-- Together, Tacit -->
-                    <span>2. <a href="https://github.com/noah-black-developer/PSU-ESC-Together-Tacit---Spring-2022" target="_blank">Together, Tacit</a></span>
-                    <br>
-                    <br>
-                    <span>A virtual-reality application designed to allow collaboration between low-vision individuals and sighted artists.</span>
-                    <ul>
-                        <li>Uses an Oculus Rift headset and custom haptic controllers to provide an artist 'haptic' feedback with a sculpting surface.</li>
-                        <li>Build using the Unity game engine with custom C# scripting.</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <!-- Chainmaille AR Calculator -->
-                    <span>3. Chainmaille AR Calculator</span>
-                    <br>
-                    <br>
-                    <span>Coming soon!</span>
-                </section>
-            </section>
-
-            <br>
-
-            <section>
-                <!-- Contact Info -->
-                <span>
-                    <pre>  ____            _             _     ___        __       
- / ___|___  _ __ | |_ __ _  ___| |_  |_ _|_ __  / _| ___  
-| |   / _ \| '_ \| __/ _` |/ __| __|  | || '_ \| |_ / _ \ 
-| |__| (_) | | | | || (_| | (__| |_   | || | | |  _| (_) |
- \____\___/|_| |_|\__\__,_|\___|\__| |___|_| |_|_|  \___/</pre>
-                </span>
-                <span>I am currently open to discussing professional work - if you are interested, feel free to reach out!</span>
-                <br>
-                <br>
-                <span>Email: <a href="mailto:noah.black0425@gmail.com">noah.black@gmail.com</a></span>
-                <br>
-                <span>Linkedin: <a href="https://www.linkedin.com/in/noah-black-developer/" target="_blank">https://www.linkedin.com/in/noah-black-developer/</a></span>
-                <br>
-                <span>GitHub: <a href="https://github.com/noah-black-developer" target="_blank">https://github.com/noah-black-developer</a></span>
-            </section>
-
-            <br>
-
-            <section>
-                <!-- Page Info -->
-                <span>
-                    <pre> ____                    ___        __       
-|  _ \ __ _  __ _  ___  |_ _|_ __  / _| ___  
-| |_) / _` |/ _` |/ _ \  | || '_ \| |_ / _ \ 
-|  __/ (_| | (_| |  __/  | || | | |  _| (_) |
-|_|   \__,_|\__, |\___| |___|_| |_|_|  \___/ 
-            |___/                            </pre>
-                </span>
-                <span>
-                    This page was designed as an experiment with building a website one piece of tech at a time, going from HTML to CSS to JavaScript.
-                    While modern web frameworks are powerful and brilliant at what they do, I was interested in getting a better understanding of
-                    the inner workings of a webpage and better inform my usage of those frameworks in the future.
-                </span>
-                <br>
-                <br>
-                <span>
-                    I figure, well, since it was a bit of a deep-dive into the simpler days of the web, it only felt right to style the whole page as such.
-                    Which got us here - to a (hopefully) faithful recreation of the Apple II terminal screen!
-                </span>
-                <br>
-                <br>
-                <span>Credit to some of the awesome folks on the internet who's references made this site possible:</span>
-                <ul>
-                    <li>Pat Orjk's <a href="https://patorjk.com/software/taag" target="_blank">Text-to-ASCII Generator</a>, which helped create the styled text you see on this page.</li>
-                    <li><a href="https://dev.to/ekeijl/retro-crt-terminal-screen-in-css-js-4afh" target="_blank">Edwin on dev.to</a>, for a great summary of how they went about creating a CSS-styled terminal of their own.</li>
-                </ul>
-                <span>This whole page is open source, so feel free to view the <a href="https://github.com/noah-black-developer/noah-black-developer.github.io" target="_blank">project</a> on Github if you're curious to see a bit of the inner workings! There might even be a few things I've kept secret, if you are wise enough to spot them...</a></span>
-            </section>
-        </body>
-
-        <br>
-
-        <footer>
-            <!-- Footer section contains links to sites/resume, toggles for terminal interactions, and other global controls.-->
-            <hr>
-            <input type="button" value="Get Latest Resume"></input>
-            <input type="checkbox" checked="true">JavaScript Enabled</input>
-        </footer>
+                <!-- ICONS -->
+                <div id="link_row">
+                    
+                </div>
+            </div>
+        </div>
     </body>
 </html>

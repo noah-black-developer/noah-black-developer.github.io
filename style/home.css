@@ -1,0 +1,122 @@
+/* GLOBAL DEFINITIONS */
+:root {
+    --background-1: #120d1b;
+    --background-2: #1d1729;
+    --foreground-1: #2c1d47;
+    --foreground-2: #473469;
+    --accent: #F25912;
+    --primary-text: #EAEFEF;
+    --secondary-text: #b3b4b4;
+    --shadow: #0000007a
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background-color: black;
+}
+
+text,
+p {
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif
+}
+
+/* CLASS DEFINITIONS */
+.stack {
+    display: grid;
+    grid-template: 1fr / 1fr;
+    place-items: center;
+}
+.stack > * {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll_element {
+    width: 10rem;
+    height: 10rem;
+}
+.scroll_element_path {
+    fill: var(--background-2);
+}
+.scroll_container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.scroll_background {
+    background-color: var(--background-1);
+
+    width: 200%;
+    height: 200%;
+
+    /* Scrolling elements */
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cpath%20style%3D%22fill%3A%20var(--background-2)%22%20d%3D%22M100%200%20L100%2050%20L50%20100%20L50%2050%20L0%2050%20L50%200%20Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A");
+    background-size: 5rem 5rem;
+    animation: slide 2s linear infinite;
+}
+@keyframes slide {
+    0% {
+        transform: translate(-25rem, -20rem);
+    }
+    100% {
+        transform: translate(-20rem, -25rem);
+    }
+}
+
+/* ID DEFINITIONS */
+#background {
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--foreground-1);
+}
+
+#background2 {
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+}
+
+#scroll {
+    z-index: 1;
+    background-color: var(--background-1);
+}
+
+#contents {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+#card {
+    width: 40rem;
+    height: 10rem;
+    border-radius: 1rem;
+
+    background-color: var(--foreground-2);
+
+    box-shadow: var(--shadow) .5rem .5rem;
+}
+
+#card_center {
+    width: 39rem;
+    height: 9rem;
+    border-radius: .6rem;
+
+    background-color: var(--foreground-1);
+}
+
+#status {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: var(--accent);
+
+    text-shadow: var(--shadow) .5rem .5rem;
+}
