@@ -41,30 +41,28 @@ p {
     align-items: center;
 }
 
-.scroll_element {
-    width: 10rem;
-    height: 10rem;
-}
-.scroll_element_path {
-    fill: var(--background-2);
-}
 .scroll_container {
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 .scroll_background {
-    background-color: var(--background-1);
-
     width: 300%;
     height: 300%;
 
     /* Scrolling elements */
-    --offset: 0s; /* Defines seconds to offset animation start. */
-    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cpath%20style%3D%22fill%3A%20var(--background-2)%22%20d%3D%22M100%200%20L100%2050%20L50%20100%20L50%2050%20L0%2050%20L50%200%20Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A");
     background-size: 5rem 5rem;
-    -webkit-animation: slide 4s linear var(--offset) infinite;
-    animation: slide 4s linear var(--offset) infinite;
+    -webkit-animation: slide 4s linear 0s infinite;
+    animation: slide 4s linear 0s infinite;
+}
+.scroll_background_offset {
+    width: 300%;
+    height: 300%;
+
+    /* Scrolling elements */
+    background-size: 5rem 5rem;
+    -webkit-animation: slide 4s linear 2s infinite;
+    animation: slide 4s linear 2s infinite;
 }
 @keyframes slide {
     0% {
@@ -123,12 +121,12 @@ p {
 }
 
 #scroll {
-    z-index: 1;
+    z-index: 2;
     background-color: var(--background-1);
 }
 
 #scroll2 {
-    z-index: 2;
+    z-index: 1;
     background-color: var(--background-1);
 }
 
