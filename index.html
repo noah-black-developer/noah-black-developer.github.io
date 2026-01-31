@@ -1,227 +1,62 @@
 <!DOCTYPE html>
 <html lang="en-US">
+    <!-- 
+        NOAH BLACK - HOMEPAGE
+        
+        Author: Noah Black (noah.black0425@gmail.com)
+        Version: v0.0.1
+        Created on January 30th, 2026
+    -->
+
     <head>
         <link rel="stylesheet" type="text/css" href="/style/home.css"></link>
     </head>
 
     <body>
-        <!-- 
-        NOTE: Page elements below are intialized to *generally* static values.
-        If the viewer chooses to interact with the page in 'terminal' mode,
-        they will be hidden from the user and instead handled by attached scripts.
-        -->
+        <div id="background" class="centered">
+            <div id="background2" class="stack">
 
-        <header>
-            <!-- Section contains the initial messages user will see before interacting with the page. -->
-            <span>
-                <pre>  ________   ________  ________  ___  ___      ________  ___       ________  ________  ___  __       
- |\   ___  \|\   __  \|\   __  \|\  \|\  \    |\   __  \|\  \     |\   __  \|\   ____\|\  \|\  \     
- \ \  \\ \  \ \  \|\  \ \  \|\  \ \  \\\  \   \ \  \|\ /\ \  \    \ \  \|\  \ \  \___|\ \  \/  /|_   
-  \ \  \\ \  \ \  \\\  \ \   __  \ \   __  \   \ \   __  \ \  \    \ \   __  \ \  \    \ \   ___  \  
-   \ \  \\ \  \ \  \\\  \ \  \ \  \ \  \ \  \   \ \  \|\  \ \  \____\ \  \ \  \ \  \____\ \  \\ \  \ 
-    \ \__\\ \__\ \_______\ \__\ \__\ \__\ \__\   \ \_______\ \_______\ \__\ \__\ \_______\ \__\\ \__\
-     \|__| \|__|\|_______|\|__|\|__|\|__|\|__|    \|_______|\|_______|\|__|\|__|\|_______|\|__| \|__|</pre>
-            </span>
-            <span>Software Developer, DevOps Engineer, App Designer</span>
-            <hr>
-            <span>Hello! Welcome to my personal homepage.<br></span>
-            <span>I use this site to host a mix of personal projects and professional experience...with a bit of old-school flair.<br></span>
-            <ul>
-                <li>Use '<b>list</b>' to show what sections can be viewed.</li>
-                <li>To open a section, use '<b>run</b>' followed by the section name (ex. run about).</li>
-                <li>For all available commands, use the '<b>help</b>' command.</li>
-                <li>Use '<b>home</b>' at any time to reset back to the starting screen.</li>
-            </ul>
-            <div id="terminalLine">] <input type="text"></input></div>
-        </header>
+                <!-- SCROLLING BACKGROUND -->
+                <div class="scroll_container">
+                    <!--
+                    To set a new scrolling SVG...
+                    1. Write out the full <svg> tag in the following format:
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path style="STYLING" d="PATH_DEFINITION"></path></svg>
 
-        <br>
+                    2. Encode the text to URL-valid text using https://www.asiteaboutnothing.net/c_decode-url.php
 
-        <body>
-            <!-- In 'terminal' mode, sections below represent various info sections the user can access. -->
-            <section>
-                <!-- About Me -->
-                <span>
-                    <pre>    _    _                 _     __  __      
-   / \  | |__   ___  _   _| |_  |  \/  | ___ 
-  / _ \ | '_ \ / _ \| | | | __| | |\/| |/ _ \
- / ___ \| |_) | (_) | |_| | |_  | |  | |  __/
-/_/   \_\_.__/ \___/ \__,_|\__| |_|  |_|\___|</pre>
-                </span>
+                    3. Insert the encoded text as a style for 'scroll_background' class as follows:
+                      <div ... style="background-image: url('data:image/svg+xml,ENCODED_TEXT)"></div>
+                    -->
 
-                <span>
-                    Profressionally, I am a full-time Software Engineer with a heavy focus on DevOps, automation, and a deep knowledge of software.
-                    I've worn many hats over the years - test engineer, developer, project architect, and more - and I take pride in being adaptive to new problem spaces.
-                </span>
-                <br>
-                <br>
-                <span>
-                    Nothing is more interesting to me than a problem that needs solving; nothing is more satisfying to me than solving it in a way that is designed to last.
-                </span>
-                <br>
-                <br>
-                <span>
-                    Personally, I try to fill my life with as much art and creativity as I can!
-                    I'm an avid fantasy fan; between running D&D games, cosplay, and even amatuer chainmaille work (emphasis on amatuer), I make sure to keep myself busy. If you're ever at the Maryland Ren Faire, keep an eye out for some of my antics! 
-                </span>
-                <br>
-                <br>
-                <span>
-                    I have a life-long love of music, theater, lifting, and puzzles, but I'm always seeking out new hobbies to take on.
-                    If anything I listed resonated with you, I may just be your guy!
-                </span>
-            </section>
+                    <!-- Reference SVG: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path style="fill: #1d1729" d="M100 0 L100 50 L50 100 L50 50 L0 50 L50 0 Z"></path></svg> -->
+                    <div id="scroll" class="scroll_background" style="background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cpath%20style%3D%22fill%3A%20%231d1729%22%20d%3D%22M100%200%20L100%2050%20L50%20100%20L50%2050%20L0%2050%20L50%200%20Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E')"></div>
+                </div>
+                
+                <!-- CONTACT CARD -->
+                <div id="contents" class="centered">
+                    <div id="card" class="centered">
+                        <div id="card_center" class="centered">
+                            <svg id="star_l" class="card_star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M341.5 45.1C337.4 37.1 329.1 32 320.1 32C311.1 32 302.8 37.1 298.7 45.1L225.1 189.3L65.2 214.7C56.3 216.1 48.9 222.4 46.1 231C43.3 239.6 45.6 249 51.9 255.4L166.3 369.9L141.1 529.8C139.7 538.7 143.4 547.7 150.7 553C158 558.3 167.6 559.1 175.7 555L320.1 481.6L464.4 555C472.4 559.1 482.1 558.3 489.4 553C496.7 547.7 500.4 538.8 499 529.8L473.7 369.9L588.1 255.4C594.5 249 596.7 239.6 593.9 231C591.1 222.4 583.8 216.1 574.8 214.7L415 189.3L341.5 45.1z"/></svg>
+                            <p id="status">Under Construction</p>
+                            <svg id="star_r" class="card_star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M341.5 45.1C337.4 37.1 329.1 32 320.1 32C311.1 32 302.8 37.1 298.7 45.1L225.1 189.3L65.2 214.7C56.3 216.1 48.9 222.4 46.1 231C43.3 239.6 45.6 249 51.9 255.4L166.3 369.9L141.1 529.8C139.7 538.7 143.4 547.7 150.7 553C158 558.3 167.6 559.1 175.7 555L320.1 481.6L464.4 555C472.4 559.1 482.1 558.3 489.4 553C496.7 547.7 500.4 538.8 499 529.8L473.7 369.9L588.1 255.4C594.5 249 596.7 239.6 593.9 231C591.1 222.4 583.8 216.1 574.8 214.7L415 189.3L341.5 45.1z"/></svg>
+                        </div>
+                    </div>
+                </div>
 
-            <br>
-
-            <section>
-                <!-- Professional Skills -->
-                <span>
-                    <pre> _____                      _                     
-| ____|_  ___ __   ___ _ __(_) ___ _ __   ___ ___ 
-|  _| \ \/ / '_ \ / _ \ '__| |/ _ \ '_ \ / __/ _ \
-| |___ >  <| |_) |  __/ |  | |  __/ | | | (_|  __/
-|_____/_/\_\ .__/ \___|_|  |_|\___|_| |_|\___\___|
-           |_|                                    </pre>
-                </span>
-                <span>Programming Languages:</span>
-                <ul>
-                    <li>Python</li>
-                    <li>C</li>
-                    <li>C++</li>
-                    <li>C#</li>
-                    <li>Javascript</li>
-                    <li>Groovy</li>
-                    <li>Bash</li>
-                    <li>Batch (cmd.exe)</li>
-                </ul>
-                <span>File Standards:</span>
-                <ul>
-                    <li>YAML</li>
-                    <li>HTML</li>
-                    <li>XML/XSD (1.0 and 1.1)</li>
-                </ul>
-                <span>Technologies:</span>
-                <ul>
-                    <li>GitHub Actions</li>
-                    <li>Jenkins</li>
-                    <li>AWS Lambda</li>
-                    <li>AWS S3</li>
-                    <li>Qt/QML/PySide6</li>
-                    <li>Atlassian Software (Confluence, Jira, Bitbucket)</li>
-                    <li>Git CLI/Scripting</li>
-                </ul>
-            </section>
-
-            <br>
-
-            <section>
-                <!-- PROJECTS -->
-                <!-- Each project is given its own decicated section below. -->
-                <span>
-                    <pre> ____            _           _       
-|  _ \ _ __ ___ (_) ___  ___| |_ ___ 
-| |_) | '__/ _ \| |/ _ \/ __| __/ __|
-|  __/| | | (_) | |  __/ (__| |_\__ \
-|_|   |_|  \___// |\___|\___|\__|___/
-              |__/                   </pre>
-                </span>
-
-                <section>
-                    <!-- TOTK Armor Tracker -->
-                    <span>1. <a href="https://github.com/noah-black-developer/TOTK-Armor-Tracker" target="_blank">TOTK Armor Tracker</a></span>
-                    <br>
-                    <br>
-                    <span>A standalone, cross-platform application for tracking your armor progress in the Legend of Zelda: Tears of the Kingdom.</span>
-                    <ul>
-                        <li>Built using C++, with QtQuick and QML as the layout designer and renderer.</li>
-                        <li>Maintained with Github Actions to handle CI/CD.</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <!-- Together, Tacit -->
-                    <span>2. <a href="https://github.com/noah-black-developer/PSU-ESC-Together-Tacit---Spring-2022" target="_blank">Together, Tacit</a></span>
-                    <br>
-                    <br>
-                    <span>A virtual-reality application designed to allow collaboration between low-vision individuals and sighted artists.</span>
-                    <ul>
-                        <li>Uses an Oculus Rift headset and custom haptic controllers to provide an artist 'haptic' feedback with a sculpting surface.</li>
-                        <li>Build using the Unity game engine with custom C# scripting.</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <!-- Chainmaille AR Calculator -->
-                    <span>3. Chainmaille AR Calculator</span>
-                    <br>
-                    <br>
-                    <span>Coming soon!</span>
-                </section>
-            </section>
-
-            <br>
-
-            <section>
-                <!-- Contact Info -->
-                <span>
-                    <pre>  ____            _             _     ___        __       
- / ___|___  _ __ | |_ __ _  ___| |_  |_ _|_ __  / _| ___  
-| |   / _ \| '_ \| __/ _` |/ __| __|  | || '_ \| |_ / _ \ 
-| |__| (_) | | | | || (_| | (__| |_   | || | | |  _| (_) |
- \____\___/|_| |_|\__\__,_|\___|\__| |___|_| |_|_|  \___/</pre>
-                </span>
-                <span>I am currently open to discussing professional work - if you are interested, feel free to reach out!</span>
-                <br>
-                <br>
-                <span>Email: <a href="mailto:noah.black0425@gmail.com">noah.black@gmail.com</a></span>
-                <br>
-                <span>Linkedin: <a href="https://www.linkedin.com/in/noah-black-developer/" target="_blank">https://www.linkedin.com/in/noah-black-developer/</a></span>
-                <br>
-                <span>GitHub: <a href="https://github.com/noah-black-developer" target="_blank">https://github.com/noah-black-developer</a></span>
-            </section>
-
-            <br>
-
-            <section>
-                <!-- Page Info -->
-                <span>
-                    <pre> ____                    ___        __       
-|  _ \ __ _  __ _  ___  |_ _|_ __  / _| ___  
-| |_) / _` |/ _` |/ _ \  | || '_ \| |_ / _ \ 
-|  __/ (_| | (_| |  __/  | || | | |  _| (_) |
-|_|   \__,_|\__, |\___| |___|_| |_|_|  \___/ 
-            |___/                            </pre>
-                </span>
-                <span>
-                    This page was designed as an experiment with building a website one piece of tech at a time, going from HTML to CSS to JavaScript.
-                    While modern web frameworks are powerful and brilliant at what they do, I was interested in getting a better understanding of
-                    the inner workings of a webpage and better inform my usage of those frameworks in the future.
-                </span>
-                <br>
-                <br>
-                <span>
-                    I figure, well, since it was a bit of a deep-dive into the simpler days of the web, it only felt right to style the whole page as such.
-                    Which got us here - to a (hopefully) faithful recreation of the Apple II terminal screen!
-                </span>
-                <br>
-                <br>
-                <span>Credit to some of the awesome folks on the internet who's references made this site possible:</span>
-                <ul>
-                    <li>Pat Orjk's <a href="https://patorjk.com/software/taag" target="_blank">Text-to-ASCII Generator</a>, which helped create the styled text you see on this page.</li>
-                    <li><a href="https://dev.to/ekeijl/retro-crt-terminal-screen-in-css-js-4afh" target="_blank">Edwin on dev.to</a>, for a great summary of how they went about creating a CSS-styled terminal of their own.</li>
-                </ul>
-                <span>This whole page is open source, so feel free to view the <a href="https://github.com/noah-black-developer/noah-black-developer.github.io" target="_blank">project</a> on Github if you're curious to see a bit of the inner workings! There might even be a few things I've kept secret, if you are wise enough to spot them...</a></span>
-            </section>
-        </body>
-
-        <br>
-
-        <footer>
-            <!-- Footer section contains links to sites/resume, toggles for terminal interactions, and other global controls.-->
-            <hr>
-            <input type="button" value="Get Latest Resume"></input>
-            <input type="checkbox" checked="true">JavaScript Enabled</input>
-        </footer>
+                <!-- ICONS -->
+                <div id="links" class="icon_row">
+                    <a href="mailto:noah.black0425@gmail.com" target="_blank">
+                        <svg id="email" class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M125.4 128C91.5 128 64 155.5 64 189.4C64 190.3 64 191.1 64.1 192L64 192L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 192L575.9 192C575.9 191.1 576 190.3 576 189.4C576 155.5 548.5 128 514.6 128L125.4 128zM528 256.3L528 448C528 456.8 520.8 464 512 464L128 464C119.2 464 112 456.8 112 448L112 256.3L266.8 373.7C298.2 397.6 341.7 397.6 373.2 373.7L528 256.3zM112 189.4C112 182 118 176 125.4 176L514.6 176C522 176 528 182 528 189.4C528 193.6 526 197.6 522.7 200.1L344.2 335.5C329.9 346.3 310.1 346.3 295.8 335.5L117.3 200.1C114 197.6 112 193.6 112 189.4z"/></svg>
+                    </a>
+                    <a href="https://github.com/noah-black-developer" target="_blank">
+                        <svg id="github" class="icon" width="98" height="96" viewBox="0 0 98 96" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_730_27136)"><path d="M41.4395 69.3848C28.8066 67.8535 19.9062 58.7617 19.9062 46.9902C19.9062 42.2051 21.6289 37.0371 24.5 33.5918C23.2559 30.4336 23.4473 23.7344 24.8828 20.959C28.7109 20.4805 33.8789 22.4902 36.9414 25.2656C40.5781 24.1172 44.4062 23.543 49.0957 23.543C53.7852 23.543 57.6133 24.1172 61.0586 25.1699C64.0254 22.4902 69.2891 20.4805 73.1172 20.959C74.457 23.543 74.6484 30.2422 73.4043 33.4961C76.4668 37.1328 78.0937 42.0137 78.0937 46.9902C78.0937 58.7617 69.1934 67.6621 56.3691 69.2891C59.623 71.3945 61.8242 75.9883 61.8242 81.252L61.8242 91.2051C61.8242 94.0762 64.2168 95.7031 67.0879 94.5547C84.4102 87.9512 98 70.6289 98 49.1914C98 22.1074 75.9883 6.69539e-07 48.9043 4.309e-07C21.8203 1.92261e-07 -1.9479e-07 22.1074 -4.3343e-07 49.1914C-6.20631e-07 70.4375 13.4941 88.0469 31.6777 94.6504C34.2617 95.6074 36.75 93.8848 36.75 91.3008L36.75 83.6445C35.4102 84.2188 33.6875 84.6016 32.1562 84.6016C25.8398 84.6016 22.1074 81.1563 19.4277 74.7441C18.375 72.1602 17.2266 70.6289 15.0254 70.3418C13.877 70.2461 13.4941 69.7676 13.4941 69.1934C13.4941 68.0449 15.4082 67.1836 17.3223 67.1836C20.0977 67.1836 22.4902 68.9063 24.9785 72.4473C26.8926 75.2227 28.9023 76.4668 31.2949 76.4668C33.6875 76.4668 35.2187 75.6055 37.4199 73.4043C39.0469 71.7773 40.291 70.3418 41.4395 69.3848Z"/></g><defs><clipPath id="clip0_730_27136"><rect width="98" height="96" fill="white"/></clipPath></defs></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/noah-black-developer/" target="_blank">
+                        <svg id="linkedin" class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 382 382" xml:space="preserve"><path d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889	C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056	H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806 c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1 s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73 c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079 c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426	c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472 L341.91,330.654L341.91,330.654z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
