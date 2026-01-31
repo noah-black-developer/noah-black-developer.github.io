@@ -20,7 +20,8 @@ body {
 
 text,
 p {
-    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    color: var(--primary-text);
 }
 
 /* CLASS DEFINITIONS */
@@ -147,6 +148,24 @@ p {
     right: 2rem;
 
     z-index: 4;
+}
+
+#details {
+    height: 3rem;
+
+    position: absolute;
+    bottom: 1rem;
+    left: 2rem;
+
+    z-index: 5;
+}
+#details > p {
+    color: var(--secondary-text);
+    font-size: .9rem;
+    transition: color 0.3s;
+}
+#details > p:hover {
+    color: var(--accent);
 }
 
 #card {
