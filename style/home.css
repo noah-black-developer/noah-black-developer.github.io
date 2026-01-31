@@ -1,17 +1,18 @@
 /* GLOBAL DEFINITIONS */
 :root {
-    --background-1: #120d1b;
+    --background-1: #191424;
     --background-2: #1d1729;
     --foreground-1: #2c1d47;
     --foreground-2: #473469;
-    --accent: #F25912;
+    --accent: #c9511a;
     --primary-text: #EAEFEF;
     --secondary-text: #b3b4b4;
-    --shadow: #0000007a
+    --shadow: #00000055
 }
 
 html,
 body {
+    width: 100%;
     height: 100%;
     margin: 0;
     background-color: black;
@@ -54,8 +55,8 @@ p {
 .scroll_background {
     background-color: var(--background-1);
 
-    width: 200%;
-    height: 200%;
+    width: 300%;
+    height: 300%;
 
     /* Scrolling elements */
     background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cpath%20style%3D%22fill%3A%20var(--background-2)%22%20d%3D%22M100%200%20L100%2050%20L50%20100%20L50%2050%20L0%2050%20L50%200%20Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A");
@@ -69,6 +70,34 @@ p {
     100% {
         transform: translate(-20rem, -25rem);
     }
+}
+
+.card_star {
+    width: 4rem;
+    height: 4rem;
+    fill: var(--accent);
+
+    animation: rotation 10s linear infinite;
+}
+@keyframes rotation {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.icon_row {
+    display: flex;
+    align-items: right;
+    gap: 1rem;
+}
+.icon {
+    width: auto;
+    height: 100%;
+    fill: var(--primary-text);
+    transition: fill 0.3s
+}
+.icon:hover {
+    fill: var(--accent);
 }
 
 /* ID DEFINITIONS */
@@ -93,30 +122,60 @@ p {
     width: 100%;
     height: 100%;
     z-index: 2;
+
+    box-shadow: inset var(--shadow) 0 0 1.5rem 1.5rem
+}
+
+#links {
+    height: 3rem;
+
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+
+    z-index: 3;
 }
 
 #card {
-    width: 40rem;
+    width: 45rem;
     height: 10rem;
     border-radius: 1rem;
 
     background-color: var(--foreground-2);
+    transition: background-color 0.3s;  
 
-    box-shadow: var(--shadow) .5rem .5rem;
+    box-shadow: var(--shadow) 0 0 1rem 1rem;
+}
+#card:hover {
+    background-color: var(--accent);
 }
 
 #card_center {
-    width: 39rem;
-    height: 9rem;
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
     border-radius: .6rem;
 
     background-color: var(--foreground-1);
+    
+    gap: 1.5rem
 }
 
 #status {
     font-size: 2.8rem;
     font-weight: bold;
-    color: var(--accent);
+    color: var(--primary-text);
 
-    text-shadow: var(--shadow) .5rem .5rem;
+    text-shadow: .3rem .3rem .3rem var(--shadow);
+}
+
+#star_l {
+    transform: rotate(0deg)
+}
+
+#star_r {
+    transform: rotate(90deg)
+}
+
+#email {
+    scale: 1.4
 }
