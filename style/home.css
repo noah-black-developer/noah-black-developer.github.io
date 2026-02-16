@@ -7,7 +7,8 @@
     --accent: #c9511a;
     --primary-text: #EAEFEF;
     --secondary-text: #b3b4b4;
-    --shadow: #00000055
+    --shadow: #00000055;
+    --strong-shadow: #00000099;
 }
 
 html,
@@ -84,25 +85,6 @@ p {
     }
 }
 
-.card_star {
-    width: 4rem;
-    height: 4rem;
-    fill: var(--accent);
-
-    -webkit-animation: rotation 10s linear infinite;
-    animation: rotation 10s linear infinite;
-
-    --start: 0deg;
-}
-@keyframes rotation {
-    0% {
-        transform: rotate(var(--start));
-    }
-    100% {
-        transform: rotate(calc(360deg + var(--start)));
-    }
-}
-
 .icon_row {
     display: flex;
     align-items: right;
@@ -112,11 +94,22 @@ p {
     width: auto;
     height: 100%;
     fill: var(--primary-text);
-    transition: fill 0.3s
 }
-.icon:hover {
+
+div.glow_on_hover {
+    transition: border-color 0.3s;
+}
+div.glow_on_hover:hover {
+    border-color: var(--accent);
+}
+
+svg.glow_on_hover {
+    transition: fill 0.3s;
+}
+svg.glow_on_hover:hover {
     fill: var(--accent);
 }
+
 
 /* ID DEFINITIONS */
 #background {
@@ -176,18 +169,14 @@ p {
 
 #card_center {
     padding: 1rem 2rem;
-    border-radius: .6rem;
 
     background-color: var(--foreground-1);
     gap: 1.5rem;
 
     border-color: var(--foreground-2);
     border-radius: .5rem;
+    border-width: .2rem;
     border-style: solid;
-    transition: border-color 0.3s;
-}
-#card_center:hover {
-    border-color: var(--accent);
 }
 
 #status {
@@ -215,6 +204,45 @@ p {
 
     align-items: start;
     align-content: end;
+}
+
+#profile_pic_wrapper {
+    width: 150px;
+    height: 150px;
+}
+#profile_pic_wrapper > * {
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+}
+
+#profile_pic {
+    z-index: 1;
+}
+#profile_pic_bw {
+    filter: grayscale(80%);
+
+    opacity: 100;
+    transition: opacity 0.3s;
+    
+    z-index: 2;
+}
+#profile_pic_bw:hover {
+    opacity: 0;
+}
+
+#profile_pic_shadow {
+    z-index: 3;
+
+    /* Ignore pointer events to allow hovering in lower z-axis elements. */
+    pointer-events: none;
+
+    border-radius: 1rem;
+    border-width: .2rem;
+    border-color: var(--background-2);
+    border-style: solid;
+
+    box-shadow: inset var(--strong-shadow) 0 0 .6rem .2rem;
 }
 
 #name {
