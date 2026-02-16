@@ -19,6 +19,7 @@ body {
 }
 
 text,
+h1, h2, h3, h4, h5, h6
 p {
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     color: var(--primary-text);
@@ -39,6 +40,16 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.columns {
+    display: flex;
+    flex-direction: row;
+}
+
+.rows {
+    display: flex;
+    flex-direction: column;
 }
 
 .scroll_container {
@@ -138,16 +149,6 @@ p {
     box-shadow: inset var(--shadow) 0 0 1.5rem 1.5rem
 }
 
-#links {
-    height: 3rem;
-
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
-
-    z-index: 4;
-}
-
 #details {
     height: 3rem;
 
@@ -167,27 +168,26 @@ p {
 }
 
 #card {
-    width: 45rem;
-    height: 10rem;
+    display: flex;
     border-radius: 1rem;
-
-    background-color: var(--foreground-2);
-    transition: background-color 0.3s;  
 
     box-shadow: var(--shadow) 0 0 1rem 1rem;
 }
-#card:hover {
-    background-color: var(--accent);
-}
 
 #card_center {
-    width: calc(100% - 1rem);
-    height: calc(100% - 1rem);
+    padding: 1rem 2rem;
     border-radius: .6rem;
 
     background-color: var(--foreground-1);
-    
-    gap: 1.5rem
+    gap: 1.5rem;
+
+    border-color: var(--foreground-2);
+    border-radius: .5rem;
+    border-style: solid;
+    transition: border-color 0.3s;
+}
+#card_center:hover {
+    border-color: var(--accent);
 }
 
 #status {
@@ -204,4 +204,31 @@ p {
 
 #email {
     scale: 1.4
+}
+
+#card_columns {
+    column-gap: 1.5rem;
+}
+
+#card_info {
+    flex-grow: 1;
+
+    align-items: start;
+    align-content: end;
+}
+
+#name {
+    margin: 0;
+}
+
+#title {
+    margin: 0;
+}
+
+#links {
+    padding-top: 1rem;
+    padding-left: .3rem;
+}
+#links a {
+    height: 2.5rem;
 }
