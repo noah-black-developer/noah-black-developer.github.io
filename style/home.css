@@ -21,7 +21,8 @@ body {
 
 text,
 h1, h2, h3, h4, h5, h6
-p {
+p,
+span {
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     color: var(--primary-text);
 }
@@ -63,7 +64,7 @@ p {
     height: 300%;
 
     /* Scrolling elements */
-    background-size: 5rem 5rem;
+    background-size: 5vmin 5vmin;
     -webkit-animation: slide 4s linear 0s infinite;
     animation: slide 4s linear 0s infinite;
 }
@@ -72,27 +73,48 @@ p {
     height: 300%;
 
     /* Scrolling elements */
-    background-size: 5rem 5rem;
+    background-size: 5vmin 5vmin;
     -webkit-animation: slide 4s linear 2s infinite;
     animation: slide 4s linear 2s infinite;
 }
 @keyframes slide {
     0% {
-        transform: translate(-30rem, -20rem);
+        transform: translate(-30vmin, -20vmin);
     }
     100% {
-        transform: translate(-20rem, -30rem);
+        transform: translate(-20vmin, -30vmin);
     }
 }
 
 .icon_row {
     display: flex;
-    align-items: right;
-    gap: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    gap: 5px;
+}
+.icon_row > a {
+    text-decoration: none;
 }
 .icon {
     width: auto;
-    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+
+    border-color: var(--primary-text);
+    border-width: 1px;
+    border-style: solid;
+
+    border-radius: 5px;
+    padding: 5px;
+}
+.icon > svg {
+    width: 20px;
+    height: 20px;
+
     fill: var(--primary-text);
 }
 
@@ -120,8 +142,8 @@ svg.glow_on_hover:hover {
 }
 
 #background2 {
-    width: calc(100% - 2rem);
-    height: calc(100% - 2rem);
+    width: calc(100% - 15px);
+    height: calc(100% - 15px);
 }
 
 #scroll {
@@ -139,81 +161,61 @@ svg.glow_on_hover:hover {
     height: 100%;
     z-index: 3;
 
-    box-shadow: inset var(--shadow) 0 0 1.5rem 1.5rem
-}
-
-#details {
-    height: 3rem;
-
-    position: absolute;
-    bottom: 1rem;
-    left: 2rem;
-
-    z-index: 5;
-}
-#details > p {
-    color: var(--secondary-text);
-    font-size: .9rem;
-    transition: color 0.3s;
-}
-#details > p:hover {
-    color: var(--accent);
+    box-shadow: inset var(--shadow) 0 0 30px 20px
 }
 
 #card {
-    display: flex;
-    border-radius: 1rem;
+    align-items: stretch;
 
-    box-shadow: var(--shadow) 0 0 1rem 1rem;
+    border-radius: 10px;
+
+    max-width: 60vw;
+    max-height: 20vh;
+
+    box-shadow: var(--shadow) 0 0 15px 10px;
 }
 
 #card_center {
-    padding: 1rem 2rem;
+    flex-grow: 1;
+    align-items: stretch;
+
+    padding: 10px 20px;
 
     background-color: var(--foreground-1);
-    gap: 1.5rem;
+    gap: 10px;
 
     border-color: var(--foreground-2);
-    border-radius: .5rem;
-    border-width: .2rem;
+    border-radius: 10px;
+    border-width: 3px;
     border-style: solid;
 }
 
-#status {
-    font-size: 2.8rem;
-    font-weight: bold;
-    color: var(--primary-text);
-
-    text-shadow: .3rem .3rem .3rem var(--shadow);
-}
-
-#star_r {
-    --start: 180deg
-}
-
-#email {
+#email_icon {
     scale: 1.4
 }
 
 #card_columns {
-    column-gap: 1.5rem;
+    column-gap: 20px;
+    align-items: center;
 }
 
 #card_info {
     flex-grow: 1;
+    align-items: stretch;
 
     align-items: start;
     align-content: end;
 }
 
 #profile_pic_wrapper {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
+
+    flex-shrink: 0;
 }
 #profile_pic_wrapper > * {
     width: 100%;
     height: 100%;
-    border-radius: .5rem;
 }
 
 #profile_pic {
@@ -237,12 +239,12 @@ svg.glow_on_hover:hover {
     /* Ignore pointer events to allow hovering in lower z-axis elements. */
     pointer-events: none;
 
-    border-radius: 1rem;
-    border-width: .2rem;
+    border-radius: 10px;
+    border-width: 3px;
     border-color: var(--background-2);
     border-style: solid;
 
-    box-shadow: inset var(--strong-shadow) 0 0 .6rem .2rem;
+    box-shadow: inset var(--strong-shadow) 0 0 20px 10px;
 }
 
 #name {
@@ -254,9 +256,9 @@ svg.glow_on_hover:hover {
 }
 
 #links {
-    padding-top: 1rem;
-    padding-left: .3rem;
-}
-#links a {
-    height: 2.5rem;
+    flex-grow: 1;
+    align-content: flex-end;
+
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
