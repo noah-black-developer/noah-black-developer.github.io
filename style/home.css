@@ -64,7 +64,7 @@ span {
     height: 300%;
 
     /* Scrolling elements */
-    background-size: 5vmin 5vmin;
+    background-size: 5vmax 5vmax;
     -webkit-animation: slide 4s linear 0s infinite;
     animation: slide 4s linear 0s infinite;
 }
@@ -73,16 +73,16 @@ span {
     height: 300%;
 
     /* Scrolling elements */
-    background-size: 5vmin 5vmin;
+    background-size: 5vmax 5vmax;
     -webkit-animation: slide 4s linear 2s infinite;
     animation: slide 4s linear 2s infinite;
 }
 @keyframes slide {
     0% {
-        transform: translate(-30vmin, -20vmin);
+        transform: translate(-30vmax, -20vmax);
     }
     100% {
-        transform: translate(-20vmin, -30vmin);
+        transform: translate(-20vmax, -30vmax);
     }
 }
 
@@ -142,8 +142,8 @@ svg.glow_on_hover:hover {
 }
 
 #background2 {
-    width: calc(100% - 15px);
-    height: calc(100% - 15px);
+    width: 98%;
+    height: 98%;
 }
 
 #scroll {
@@ -161,7 +161,7 @@ svg.glow_on_hover:hover {
     height: 100%;
     z-index: 3;
 
-    box-shadow: inset var(--shadow) 0 0 30px 20px
+    box-shadow: inset var(--shadow) 0 0 2vmin 1.5vmin
 }
 
 #card {
@@ -170,7 +170,7 @@ svg.glow_on_hover:hover {
     border-radius: 10px;
 
     max-width: 60vw;
-    max-height: 20vh;
+    max-height: 80vh;
 
     box-shadow: var(--shadow) 0 0 15px 10px;
 }
@@ -249,10 +249,12 @@ svg.glow_on_hover:hover {
 
 #name {
     margin: 0;
+    font-size: 22pt;
 }
 
 #title {
     margin: 0;
+    font-size: 16pt;
 }
 
 #links {
