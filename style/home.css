@@ -27,6 +27,10 @@ span {
     color: var(--primary-text);
 }
 
+a {
+    text-decoration: none;
+}
+
 /* CLASS DEFINITIONS */
 .stack {
     display: grid;
@@ -86,38 +90,6 @@ span {
     }
 }
 
-.icon_row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    gap: 5px;
-}
-.icon_row > a {
-    text-decoration: none;
-}
-.icon {
-    width: auto;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 5px;
-
-    border-color: var(--primary-text);
-    border-width: 1px;
-    border-style: solid;
-
-    border-radius: 5px;
-    padding: 5px;
-}
-.icon > svg {
-    width: 20px;
-    height: 20px;
-
-    fill: var(--primary-text);
-}
-
 div.glow_on_hover {
     transition: border-color 0.3s;
 }
@@ -130,6 +102,32 @@ svg.glow_on_hover {
 }
 svg.glow_on_hover:hover {
     fill: var(--accent);
+}
+
+.icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+
+    border-color: var(--primary-text);
+    border-width: 2px;
+    border-style: solid;
+
+    border-radius: 5px;
+    padding: 5px;
+}
+.icon > svg {
+    width: 25px;
+    height: 25px;
+
+    fill: var(--primary-text);
+}
+.icon > span {
+    font-size: 12pt;
+    font-weight: bold;
+    flex-grow: 1;
+    text-align: center;
 }
 
 
@@ -169,9 +167,6 @@ svg.glow_on_hover:hover {
 
     border-radius: 10px;
 
-    max-width: 60vw;
-    max-height: 80vh;
-
     box-shadow: var(--shadow) 0 0 15px 10px;
 }
 
@@ -208,8 +203,8 @@ svg.glow_on_hover:hover {
 }
 
 #profile_pic_wrapper {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
 
     flex-shrink: 0;
 }
@@ -249,7 +244,7 @@ svg.glow_on_hover:hover {
 
 #name {
     margin: 0;
-    font-size: 22pt;
+    font-size: 24pt;
 }
 
 #title {
@@ -258,9 +253,42 @@ svg.glow_on_hover:hover {
 }
 
 #links {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    gap: 5px;
+
     flex-grow: 1;
     align-content: flex-end;
 
     padding-top: 20px;
     padding-bottom: 10px;
+}
+#links > * {
+    display: flex;
+    flex-direction: row;
+    gap: inherit;
+}
+#link_row1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+#link_row2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+@media screen and ((max-aspect-ratio: 5/8) or (max-width: 800px)) {
+    #links {
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr;
+    }
+    #link_row1 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    #link_row2 {
+        grid-column: 1;
+        grid-row: 2;
+    }
 }
