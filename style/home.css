@@ -12,7 +12,7 @@
     --strong-shadow: #00000099;
 
     /* DEFAULTS */
-    --default-font-size: 1.4em;
+    --default-font-size: 1em;
 }
 
 html,
@@ -28,37 +28,39 @@ body {
 
 /* Queries to adjust default settings for screen sizes. */
 @media (min-width: 48em) {
-    /* Screen width of 1024px */
     body {
         font-size: var(--default-font-size);
     }
 }
 
 @media (min-width: 64em) {
-    /* Screen width of 1024px */
     body {
-        font-size: var(--default-font-size)*1.2;
+        font-size: calc(var(--default-font-size) * 1.2);
     }
 }
 
 @media (min-width: 85.375em) {
-    /* Screen width of 1366px */
     body {
-        font-size: var(--default-font-size)*1.3;
+        font-size: calc(var(--default-font-size) * 1.3);
     }
 }
 
 @media (min-width: 120em) {
-    /* Screen width of 1920px */
     body {
-        font-size: var(--default-font-size)*1.4;
+        font-size: calc(var(--default-font-size) * 1.4);
     }
 }
 
 @media (min-width: 160em) {
-    /* Screen width of 2560px */
     body {
-        font-size: var(--default-font-size)*1.6;
+        font-size: calc(var(--default-font-size) * 1.8);
+    }
+}
+
+@media (min-width: 48em) and (max-aspect-ratio: 1.2) {
+    /* Greater scaling for tall vertical windows on small screens. */
+    body {
+        font-size: calc(var(--default-font-size) * 1.8);
     }
 }
 
@@ -214,7 +216,7 @@ svg.glow_on_hover:hover {
     max-width: 80vw;
     max-height: 80vh;
 
-    overflow: hidden;
+    overflow: scroll;
 
     background-color: var(--foreground-1);
 
@@ -222,6 +224,20 @@ svg.glow_on_hover:hover {
     border-radius: 10px;
     border-width: 3px;
     border-style: solid;
+}
+
+@media (max-aspect-ratio: 1.2) {
+    /* Additional query to prevent stretching too wide on wide screens. */
+    #card_center {
+        max-width: 60vw;
+    }
+}
+
+@media (max-aspect-ratio: 0.8) {
+    /* Additional query to prevent stretching too wide on tall screens. */
+    #card_center {
+        max-height: 60vh;
+    }
 }
 
 #email_icon {
@@ -236,15 +252,12 @@ svg.glow_on_hover:hover {
     width: 100%;
     height: 100%;
 
-    column-gap: .6em;
     align-items: center;
 }
 
 #card_info {
     flex-grow: 1;
-    align-items: stretch;;
-
-    align-items: start;
+    align-items: stretch;
     align-content: end;
 }
 
@@ -296,12 +309,6 @@ svg.glow_on_hover:hover {
     margin: 0;
 }
 
-#email {
-    font-size: .7em;
-    padding-top: 1em;
-    padding-bottom: .3em;
-}
-
 #email_link {
     text-decoration: none;
 }
@@ -312,10 +319,14 @@ svg.glow_on_hover:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-content: stretch;
     justify-content: center;
-    gap: 5px;
+    gap: .25em;
 
-    padding-bottom: 10px;
+    padding-top: .75em;
+    padding-bottom: .5em;
+    padding-left: .5em;
+    padding-right: .5em;
 }
 #links > * {
     display: flex;
