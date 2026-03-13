@@ -2,9 +2,9 @@
 :root {
     /* COLORS */
     --background-1: #191424;
-    --background-2: #1d1729;
-    --foreground-1: #2c1d47;
-    --foreground-2: #473469;
+    --background-2: #282038;
+    --foreground-1: #342453;
+    --foreground-2: #533c7a;
     --accent: #c9511a;
     --primary-text: #EAEFEF;
     --secondary-text: #b3b4b4;
@@ -107,8 +107,8 @@ a {
     overflow: hidden;
 }
 .scroll_background {
-    width: 300%;
-    height: 300%;
+    width: 800%;
+    height: 800%;
 
     /* Scrolling elements */
     background-size: 5vmax 5vmax;
@@ -116,8 +116,8 @@ a {
     animation: slide 4s linear 0s infinite;
 }
 .scroll_background_offset {
-    width: 300%;
-    height: 300%;
+    width: 800%;
+    height: 800%;
 
     /* Scrolling elements */
     background-size: 5vmax 5vmax;
@@ -211,12 +211,12 @@ svg.glow_on_hover:hover {
 }
 
 #card_center {
-    padding: .3em 1em;
+    padding: .5em 1em;
 
     max-width: 80vw;
     max-height: 80vh;
 
-    overflow: scroll;
+    overflow: auto;
 
     background-color: var(--foreground-1);
 
@@ -253,6 +253,7 @@ svg.glow_on_hover:hover {
     height: 100%;
 
     align-items: center;
+    column-gap: .75em;
 }
 
 #card_info {
@@ -275,7 +276,7 @@ svg.glow_on_hover:hover {
     z-index: 1;
 }
 #profile_pic_bw {
-    filter: grayscale(80%);
+    filter: grayscale(50%);
 
     opacity: 100;
     transition: opacity 0.3s;
@@ -305,8 +306,10 @@ svg.glow_on_hover:hover {
 #email {
     width: 100%;
     flex-grow: 1;
-    text-align: center;
+    text-align: left;
     margin: 0;
+
+    white-space: nowrap;
 }
 
 #email_link {
@@ -320,12 +323,11 @@ svg.glow_on_hover:hover {
     flex-direction: row;
     flex-wrap: wrap;
     align-content: stretch;
-    justify-content: center;
+    justify-content: left;
     gap: .25em;
 
     padding-top: .75em;
     padding-bottom: .5em;
-    padding-left: .5em;
     padding-right: .5em;
 }
 #links > * {
